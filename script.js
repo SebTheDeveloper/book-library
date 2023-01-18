@@ -14,6 +14,10 @@ cancelBtn.addEventListener('click', () => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  newBook();
+});
+
+function newBook() {
   const newBook = document.createElement('div');
   newBook.classList.add('book');
   const title = document.querySelector('input:nth-of-type(1)').value;
@@ -32,11 +36,11 @@ form.addEventListener('submit', (e) => {
     <p>Book Title: <span>${title}</span></p>
     <p>Author: <span>${author}</span></p>
     <p>Pages Read: <span>${pagesRead} / ${totalPages}</span></p>
-    <p class="recommended">Recommended: <span>${recommended == true ? 'Yes' : 'No'}</span></p>
+    <p class="recommended">Recommended: <span>${recommended ? 'Yes' : 'No'}</span></p>
     <img src="./images/trash-can-outline.png" alt="Remove from Library">`;
     newBook.querySelector('img').addEventListener('click', () => {
       library.removeChild(newBook);
     });
   library.appendChild(newBook);
   cancelBtn.click();
-});
+}
