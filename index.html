@@ -19,10 +19,21 @@
   <main>
     <div class="form-modal">
       <form action="/" autocomplete="off">
-        <input type="text" placeholder="Name of Book" required>
-        <input type="text" placeholder="Author" required>
-        <input type="text" placeholder="Number of Pages" required>
-        <button type="submit">Add Book</button>
+        <div class="top-modal">
+          <p>Add a Book</p>
+        </div>
+        <div class="inputs">
+          <input type="text" placeholder="Name of Book" required autofocus>
+          <input type="text" placeholder="Author" required>
+          <input type="number" placeholder="Number of Pages" required>
+          <input type="number" placeholder="Read Pages" required>
+          <label for="read">Have You Read It?</label>
+          <input type="checkbox" id="read">
+        </div>
+        <div class="bottom-modal">
+          <button type="reset" id="cancel">Cancel</button>
+          <button type="submit">Add to Library</button>
+        </div>
       </form>
     </div>
     <div class="add-book">+</div>
