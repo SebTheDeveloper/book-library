@@ -58,6 +58,8 @@ table {
   --purple: #6b23b3;
   --bg: rgb(50, 51, 63);
   --button-gradient: linear-gradient(var(--purple), #1b1571);
+  --red: rgb(160, 0, 0);
+  --green: rgb(0, 160, 0);
 }
 a {
   text-decoration: none;
@@ -105,8 +107,8 @@ main {
   color: white;
 }
 .add-book {
-  height: 80px;
-  width: 80px;
+  height: 75px;
+  width: 75px;
   font-weight: 300;
   border-radius: 8px;
   font-size: 60px;
@@ -198,11 +200,11 @@ label {
 }
 .bottom-modal :first-child {
   width: 35%;
-  background-color: rgb(160, 0, 0);
+  background-color: var(--red);
 }
 .bottom-modal :last-child {
   width: 65%;
-  background-color: rgb(0, 160, 0);
+  background-color: var(--green);
 }
 .library {
   display: flex;
@@ -215,6 +217,7 @@ label {
   flex-wrap: wrap;
   color: black;
   font-weight: 600;
+  font-size: 1.1rem;
 }
 .book {
   display: flex;
@@ -223,17 +226,27 @@ label {
   gap: .3rem;
   min-height: 150px;
   min-width: 200px;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
   background-color: rgb(135, 220, 241);
   box-shadow: 5px 5px 10px #00000080;
   transition: all .4s ease-in-out;
 }
 .book:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 6px 6px 15px #00000060;
 }
 .book span {
   font-weight: 400;
+  margin-left: .5rem;
+}
+.book img {
+  width: 25px;
+  cursor: pointer;
+}
+.book img:hover {
+  background-color: var(--red);
+  border-radius: 5px;
 }
 footer p {
   opacity: 0;
