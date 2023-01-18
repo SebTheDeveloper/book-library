@@ -30,14 +30,13 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   overflow-x: hidden;
-	line-height: 1;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--bg);
 }
 ol, ul {
@@ -56,7 +55,7 @@ table {
 	border-spacing: 0;
 }
 :root {
-  --purple: #431571;
+  --purple: #6b23b3;
   --bg: rgb(50, 51, 63);
   --button-gradient: linear-gradient(var(--purple), #1b1571);
 }
@@ -97,10 +96,12 @@ header button {
 }
 main {
   width: 100%;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
+  padding: 2rem;
+  gap: 10px;
   color: white;
 }
 .add-book {
@@ -125,7 +126,7 @@ main {
 }
 
 .form-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -145,6 +146,7 @@ form {
   background-color: #eee;
   justify-content: space-between;
   border-radius: 8px;
+  box-shadow: 2px 10px 15px #00000080;
 }
 form, .inputs {
   display: flex;
@@ -201,6 +203,37 @@ label {
 .bottom-modal :last-child {
   width: 65%;
   background-color: rgb(0, 160, 0);
+}
+.library {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+  height: 100%;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: black;
+  font-weight: 600;
+}
+.book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: .3rem;
+  min-height: 150px;
+  min-width: 200px;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgb(135, 220, 241);
+  box-shadow: 5px 5px 10px #00000080;
+  transition: all .4s ease-in-out;
+}
+.book:hover {
+  transform: scale(1.05);
+}
+.book span {
+  font-weight: 400;
 }
 footer p {
   opacity: 0;
